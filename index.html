@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--[if gt IE 8]><!--> <html lang="en-US"> <!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style>
+@font-face {
+  font-family: myFirstFont;
+  src: url(Hacked-KerX.ttf);
+}
+#work {
+  h2 
+  height: 300px;
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(80,171,241,1));
+  font-family: myFirstFont;
+}
+</style>
+<script type="text/javascript">
+    function detectrumour(){
+         document.querySelector(".answer").innerHTML= "DETECTING"
+        url="http://localhost:5000/rumour?id="+ document.querySelector(".rumourid").value;
+        console.log(url)
+        fetch(url).then((blob)=>blob.json()).then(data=>{
+            if(data['a']=="True")
+                document.querySelector(".answer").innerHTML= "High chances of being a Rumour"
+            else if(data['a']=="False")
+                document.querySelector(".answer").innerHTML= "Less chances of being a Rumour"
+            else
+                document.querySelector(".answer").innerHTML= "Error"
+        })
+    }
+</script>
+<title>Major Project</title>   
+
+
+
+<!-- Mobile Specifics -->
+
+
+<link href="_include/css/bootstrap.min.css" rel="stylesheet">
+
+
+<link href="_include/css/main.css" rel="stylesheet">
+<link href="_include/css/style.css" rel="stylesheet">
+
+
+<link href="_include/css/supersized.css" rel="stylesheet">
+<link href="_include/css/supersized.shutter.css" rel="stylesheet">
+
+
+<link href="_include/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+
+
+<link href="_include/css/fonts.css" rel="stylesheet">
+
+
+<!-- Modernizr -->
+<script src="_include/js/modernizr.js"></script>
+
+<!-- Analytics -->
+
+<!-- End Analytics -->
+
+</head>
+
+
+<body>
+
+<!-- This section is for Splash Screen -->
+<div class="ole">
+<section id="jSplash">
+	<div id="circle"></div>
+</section>
+</div>
+<!-- End of Splash Screen -->
+
+<!-- Homepage Slider 
+<div id="home-slider">	
+    <div class="overlay"></div>
+
+    <div class="slider-text">
+    	<div id="slidecaption"></div>
+    </div>   
+	
+	<div class="control-nav">
+        <a id="prevslide" class="load-item"><i class="font-icon-arrow-simple-left"></i></a>
+        <a id="nextslide" class="load-item"><i class="font-icon-arrow-simple-right"></i></a>
+        <ul id="slide-list"></ul>
+        
+        <a id="nextsection" href="#work"><i class="font-icon-arrow-simple-down"></i></a>
+    </div>
+</div>
+<!-- End Homepage Slider -->
+
+<!-- Header -->
+<header>
+    <div class="sticky-nav">
+    	<a id="mobile-nav" class="menu-nav" href="#menu-nav"></a>
+        
+        <div id="logo">
+        	<a id="goUp" href="#home-slider" title="Rumour Detection  "></a>
+        </div>
+        
+        <nav id="menu">
+        	<ul id="menu-nav">
+            	<li class="current"><a href="#home-slider">Home</a></li>
+                <li><a href="http://www.google.com">Our Work</a></li>
+                <li><a href="#">About Model</a></li>
+                <li><a href="#contact">Contact</a></li>
+                         
+            </ul>
+        </nav>
+        
+    </div>
+</header>
+<!-- End Header -->
+<!-- Our Work Section -->
+<div id="work" class="page">
+	<div class="container">
+    	<!-- Title Page -->
+        <div class="row">
+            <div class="span12">
+                <div class="title-page">
+                    <h2 style="color:#162e28;font-family: myFirstFont"class="title">Rumour Detection On Twitter</h2>
+                </div>
+            </div>
+        </div>
+        <!-- End Title Page -->
+            
+<div class="jumbotron">
+  
+    <div class="input-group mb-3">
+    <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1"></span>
+    </div>
+    <center><input type="text" class="form-control rumourid" placeholder="Enter the TWEET ID" aria-label="Username" aria-describedby="basic-addon1"></center>
+    <div class="neon">
+    <center><a href='#' id="tar" onclick='detectrumour()'>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Check!
+    </a></center>>
+    </div>
+    </div>
+    <div>
+        <center><h4 style="color:#162e28;font-family: myFirstFont" class="answer"><h4></center>
+    </div>
+
+</div>
+
+<a id="back-to-top" href="#">
+	<i class="font-icon-arrow-simple-up"></i>
+</a>
+<!-- End Back to Top -->
+
+<!-- Js -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> <!-- jQuery Core -->
+<script src="_include/js/bootstrap.min.js"></script> <!-- Bootstrap -->
+<script src="_include/js/supersized.3.2.7.min.js"></script> <!-- Slider -->
+<script src="_include/js/waypoints.js"></script> <!-- WayPoints -->
+<script src="_include/js/waypoints-sticky.js"></script> <!-- Waypoints for Header -->
+<script src="_include/js/jquery.isotope.js"></script> <!-- Isotope Filter -->
+<script src="_include/js/jquery.fancybox.pack.js"></script> <!-- Fancybox -->
+<script src="_include/js/jquery.fancybox-media.js"></script> <!-- Fancybox for Media -->
+<script src="_include/js/jquery.tweet.js"></script> <!-- Tweet -->
+<script src="_include/js/plugins.js"></script> <!-- Contains: jPreloader, jQuery Easing, jQuery ScrollTo, jQuery One Page Navi -->
+<script src="_include/js/main.js"></script> <!-- Default JS -->
+<!-- End Js -->
+
+</body>
+
+</html>
