@@ -28,3 +28,8 @@ keywords = rake_object.run(text)
 # 3. print results
 print("Keywords:", keywords)
 ```
+#Steps to run
+1) First run the backendfull.py in windows shell or ant other command line.
+2) After that open the index.html file in chrome.
+3) Copy the tweetid of any tweet and paste.
+4) Submit
